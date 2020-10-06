@@ -12,17 +12,17 @@ returns a value, that value will be logged to the console.  An example of this w
 Task 1a - Voting Age
 
 Do the following:   
-   1. Make a variable called votingAge and give it a value *Complete*
-   2. Return true if age is 18 or higher
+   1. Make a variable called votingAge and give it a value ✅
+   2. Return true if age is 18 or higher ✅
 
    HINT: no function required
 */
 let votingAge = 21;
 
 if(votingAge >= 18){
-  console.log('true');
-}else if(votingAge<18){
-  console.log('false');
+  console.log(true);
+}else{
+  console.log(false);
 }
 
 
@@ -30,29 +30,39 @@ if(votingAge >= 18){
 Task 1b - Values
 
 Do the following:   
-   1. Declare two variables and assign them values
-   2. Use a conditional to change the value of the 1st variable based on the value assigned to the 2nd variable
+   1. Declare two variables *Different variables* and assign them values ✅
+   2. Use a conditional *If statement* to change the value of the 1st variable 
+   based on the value assigned to the 2nd variable
    3. Return the new value of the 1st variable
 
    HINT: no function required
 */
+let WillieSport = 'football'; //1st Variable
+let JayneeSport = 'Soccer'; //2nd Variable- If the 2nd variable occurs, then the 1st variable is changed
 
+if(JayneeSport === 'Soccer'){  //If JayneeSport is equal to Soccer than variable WillieSport changes to 'Baseball'
+  WillieSport = 'Baseball';
+}else{
+  WillieSport = 'football';
+}
 
-
-
+console.log(WillieSport);
 
 /*
 Task 1c - Convert Strings to Numbers
 
 Do the following:   
-   1. Declare a string type variable with the value of "1999"
+   1. Declare a string type variable with the value of "1999" ✅
    2. Convert the string value of "1999" to a integer value of 1999
    3. Return the result
 
-   HINT: look up the Number method
+   HINT: look up the Number method, no function needed
 */
+let birthDate = Number("1999");
 
-
+console.log(Number(birthDate));  
+/*Notes: in order to change to integer, it had to be Number(). 
+thats why you console.log the whole thing versus just ("1999"). */
 
 
 /*
