@@ -111,24 +111,41 @@ Use the hungryDog function and feeding requirements below to do the following:
   
   Feeding Requirements:
 
-  Adult Dogs 1 year and older 
-     up to 5 lbs - 5% of their body weight
-     6 - 10 lbs - 4% of their body weight 
-     11 - 15 lbs - 3% of their body weight 
-     > 15lbs - 2% of their body weight 
+  Adult Dogs 1 year and older ( adultDogs >= 1year)
+     up to 5 lbs - 5% of their body weight (weight <= 5 lbs (weight * 5%)) ✅
+     6 - 10 lbs - 4% of their body weight (weight >=6 lbs && weight <=10 lbs (weight * 4%)) ✅
+     11 - 15 lbs - 3% of their body weight (weight >=11 lbs && weight <=15 lbs (weight * 3%)) ✅
+     > 15lbs - 2% of their body weight (weight > 15 lbs (weight * 2%)) ✅
 
   Puppies less than 1 year
-     2 - 4 months 10% of their body weight
-     4 - 7 months 5% of their body weight 
-     7 - 12 months 4% of their body weight
+     2/12 (0.16666667) - 4/12 (0.33333333) months 10% of their body weight (age >= (0.16666667) && age < (0.33333333) (weight * 10%)) ✅
+     4/12 - 7/12 (0.58333333) months 5% of their body weight (age >= (0.33333333) && age < (0.58333333) (weight * 5%)) ✅
+     7/12 - 12/12 (1) months 4% of their body weight (age >= (0.58333333) && age < (1) (weight * 4%)) ✅
     
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
+function hungryDog(weight, age){
+  if(age >=1) {  //if the age is greater than or equal to one, your gonna run thru its if-statements, if not, then jump to else-if statements (puppy)
+    if(weight <=5){
+      return weight * 0.05;
+    }else if(weight >=6 && weight <=10){
+      return weight * 0.04;
+    }else if(weight >=11 && weight <=15){
+      return weight * 0.03;
+    }else if(weight > 15){
+      return weight * 0.02;
+    }
+  }else if(age >= 0.16666667 && age < 0.33333333){
+    return weight * 0.10;
+  }else if(age >= 0.33333333 && age < 0.58333333){
+    return weight * 0.05;
+  }else if(age >= 0.58333333 && age < 1){
+    return weight * 0.04;
   }
+} //end of funtion hungryDog
 
+console.log(hungryDog(15, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
