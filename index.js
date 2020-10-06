@@ -12,12 +12,18 @@ returns a value, that value will be logged to the console.  An example of this w
 Task 1a - Voting Age
 
 Do the following:   
-   1. Make a variable called votingAge and give it a value
+   1. Make a variable called votingAge and give it a value *Complete*
    2. Return true if age is 18 or higher
 
    HINT: no function required
 */
+let votingAge = 21;
 
+if(votingAge >= 18){
+  console.log('true');
+}else if(votingAge<18){
+  console.log('false');
+}
 
 
 /*
