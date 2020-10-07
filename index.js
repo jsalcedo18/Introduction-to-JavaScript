@@ -149,22 +149,62 @@ console.log(hungryDog(15, 1));
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
-
 // Rock, Paper, Scissors - Let's play against the computer!
 /*
-Use the game function below to do the following:
-  1. Receive a string that represents the user's choice (either "rock", "paper", or "scissors")
-  2. Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
-  3. Return whether the user won, lost, or tied based on these rules of the game described below
-  
-  RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
-  
+- Create a global variable that randomly generates the computer's choice // var outcome = math.floor(math.random()*3) ✅
+    - Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1) ✔
+- Use the game function below to do the following:
+    1. Receive 2 parameters the user's choice and the computer's choice // (usersChoice✅, computersChoice✅)
+    2. Return whether the user won, lost, or tied based on these rules of the game described below ✅
+  RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie ✅
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game(/*add your code here*/){
-    /*add your code here*/
-}
+/* Game Guidelines:
+'rock' === 0
+'paper' === 1
+'scissors' === 2 
+
+Returns:
+'you win!'
+'you lose!'
+`it's a tie`
+
+RULES OF THE GAME: 
+-Scissors(2) beats Paper(1)
+  user          comp ✔
+  comp          user ✔
+-Paper(1) beats Rock(0)
+ user           comp ✔
+ comp           user ✔
+-Rock(0) beats Scissors(2)
+ user            comp ✔
+ comp            user ✔
+-Or there's a tie
+*/
+
+function game(usersChoice){
+
+  var computersChoice = Math.floor(Math.random()*3);
+  
+  if(usersChoice === 'scissors' && computersChoice === 1){
+    return 'you win!';
+  }else if(usersChoice === 'paper' && computersChoice === 2){
+    return 'you lose!';
+  }else if(usersChoice === 'paper' && computersChoice === 0){
+    return 'you win!';
+  }else if(usersChoice === 'rock' && computersChoice === 1){
+    return 'you lose!';
+  }else if(usersChoice === 'rock' && computersChoice === 2){
+    return 'you win!';
+  }else if(usersChoice === 'scissors' && computersChoice === 0){
+    return 'you lose!';
+  }else{
+    return "it's a tie";
+  }
+  } //End of function game 
+  
+  console.log(game('scissors'));
   
   
 
@@ -229,10 +269,19 @@ Using the grade function below do the following:
    below 60 = F
 */
   
-function grade(/*add your code here*/){
-    /*add your code here*/
-  }
-  
+  function grade(number){
+    if(number >= 90){
+      return ("A");
+  }else if(number >= 80){
+      return ("you got a B");
+  }else if(number >= 70){
+      return ("C");
+  }else if(number >= 60){
+      return ("D");
+  }else{
+      return ("F");
+  }}
+console.log(grade(100));
   
   
   
